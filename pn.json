@@ -1,0 +1,25 @@
+[
+    {
+        "EndpointUrl": "opc.tcp://opcplc:50000",
+        "UseSecurity": false,
+        "OpcAuthenticationMode": "UsernamePassword",
+        "OpcAuthenticationUsername": "[[Secret:username]]",
+        "OpcAuthenticationPassword": "[[Secret:password]]",
+        "OpcNodes": [
+            {
+                "Id": "nsu=http://microsoft.com/Opc/OpcPlc/;s=StepUp",
+                "OpcSamplingInterval": 2000,
+                "OpcPublishingInterval": 2000,
+                "SkipFirst": true,
+                "QueueSize": 10
+            },
+            {
+                "Id": "nsu=http://microsoft.com/Opc/OpcPlc/;s=FastUInt1",
+                "OpcSamplingInterval": 2000,
+                "OpcPublishingInterval": 2000,
+                "SkipFirst": true,
+                "QueueSize": 10
+            }
+        ]
+    }
+]
